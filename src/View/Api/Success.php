@@ -8,8 +8,6 @@ class Success implements View
 {
     public static function render(array $params): string
     {
-        return json_encode([
-            'data' => $params['data']
-        ]);
+        return json_encode($params['data']);
     }
 }

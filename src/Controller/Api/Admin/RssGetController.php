@@ -14,19 +14,17 @@ class RssGetController extends Controller
         $json = $this->validate($request->getParsedBody());
         $rssDb = $this->getModel('Rss');
         $index = $json['index'] + 1;
-        
+
         $list = $rssDb->selectByIdBetween($index, $index + $json['offset']);
 
         $count = $rssDb->count();
 
 
-        return $this->view($response, 'Api\\Success', [
-            'data' => [
-                'list' => $list,
-                'total' => $count,
-                'index' => $json['index'],
-                'offset' => $json['offset']
-            ]
+        return $this->view($response, 'Api\\RssGet', [
+            'list' => $list,
+            'total' => $count,
+            'index' => $json['index'],
+            'offset' => $json['offset']
         ]);
     }
 

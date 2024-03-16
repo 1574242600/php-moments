@@ -24,13 +24,11 @@ class ItemsGetController extends Controller
         $count = $itemsDb->count();
 
 
-        return $this->view($response, 'Api\\Success', [
-            'data' => [
-                'list' => $list,
-                'total' => $count,
-                'index' => $json['index'],
-                'offset' => $json['offset']
-            ]
+        return $this->view($response, 'Api\\ItemsGet', [
+            'list' => $list,
+            'total' => $count,
+            'index' => $json['index'],
+            'offset' => $json['offset']
         ]);
     }
 

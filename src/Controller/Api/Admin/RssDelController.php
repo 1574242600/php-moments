@@ -15,6 +15,7 @@ class RssDelController extends Controller
         $rssDb = $this->getModel('Rss');
         $itemDb = $this->getModel('Items');
 
+        //todo 判断是否存在
         $rssDb->action(function() use($rssDb, $itemDb, $id) {
             $itemDb->delete([
                 'rss_id' => $id
