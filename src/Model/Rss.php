@@ -13,7 +13,8 @@ class Rss extends DB
         'id',
         'name',
         'url',
-        'last_scan'
+        'last_scan',
+        'avatar'
     ];
 
     public function selectWithAllColumn(array $where = []): array | null

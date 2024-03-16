@@ -19,7 +19,8 @@ class RssPostController extends Controller
 
         $data = [
             'name' => $rss->getFeed()->getTitle(),
-            'url' => $json['url']
+            'url' => $json['url'],
+            'avatar' => array_key_exists('avatar', $json) ? $json['avatar'] : null
         ];
 
         try {
@@ -54,7 +55,11 @@ class RssPostController extends Controller
             v::key('url', v::anyOf(
                 v::Url()->startsWith('http://'),
                 v::Url()->startsWith('https://')
-            ))
+            )),
+            v::key('avatar', v::anyOf(
+                v::Url()->startsWith('http://'),
+                v::Url()->startsWith('https://')
+            ), false)
         );
     }
 }

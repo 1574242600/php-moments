@@ -7,60 +7,65 @@ class Install
     public static function run(\Medoo\Medoo $d)
     {
 
-        $d->create("rss", [
-            "id" => [
-                "INT",
-                "UNSIGNED",
-                "NOT NULL",
-                "AUTO_INCREMENT",
-                "PRIMARY KEY"
+        $d->create('rss', [
+            'id' => [
+                'INT',
+                'UNSIGNED',
+                'NOT NULL',
+                'AUTO_INCREMENT',
+                'PRIMARY KEY'
             ],
-            "name" => [
-                "VARCHAR(50)",
-                "NOT NULL"
+            'name' => [
+                'VARCHAR(50)',
+                'NOT NULL'
             ],
-            "url" => [
-                "TEXT",
-                "UNIQUE",
-                "NOT NULL"
+            'url' => [
+                'TEXT',
+                'UNIQUE',
+                'NOT NULL'
             ],
-            "last_scan" => [
-                "TIMESTAMP",
+            'last_scan' => [
+                'TIMESTAMP',
                 'NULL',
-                "DEFAULT NULL"
+                'DEFAULT NULL'
+            ],
+            'avatar' => [
+                'TEXT',
+                'NULL',
+                'DEFAULT NULL'
             ]
         ]);
 
-        $d->create("items", [
-            "id" => [
-                "INT",
-                "UNSIGNED",
-                "NOT NULL",
-                "AUTO_INCREMENT",
-                "PRIMARY KEY"
+        $d->create('items', [
+            'id' => [
+                'INT',
+                'UNSIGNED',
+                'NOT NULL',
+                'AUTO_INCREMENT',
+                'PRIMARY KEY'
             ],
-            "rss_id" => [
-                "INT",
-                "UNSIGNED",
-                "NOT NULL",
+            'rss_id' => [
+                'INT',
+                'UNSIGNED',
+                'NOT NULL',
             ],
-            "title" => [
-                "TEXT",
-                "NOT NULL"
+            'title' => [
+                'TEXT',
+                'NOT NULL'
             ],
-            "description" => [
-                "TEXT",
-                "NOT NULL"
+            'description' => [
+                'TEXT',
+                'NOT NULL'
             ],
-            "url" => [
-                "TEXT",
-                "UNIQUE",
-                "NOT NULL"
+            'url' => [
+                'TEXT',
+                'UNIQUE',
+                'NOT NULL'
             ],
-            "date" => [
-                "TIMESTAMP",
+            'date' => [
+                'TIMESTAMP',
                 'NULL',
-                "DEFAULT NULL"
+                'DEFAULT NULL'
             ],
         ]);
 

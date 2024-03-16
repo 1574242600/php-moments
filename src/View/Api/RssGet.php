@@ -14,7 +14,8 @@ class RssGet implements View
                 'id' => $item['id'],
                 'name' => $item['name'],
                 'url' => $item['url'],
-                'lastScan' => Date::strToTimestamp($item['last_scan'])
+                'lastScan' => Date::strToTimestamp($item['last_scan']),
+                'avatar' => $item['avatar'],
             ];
         }
 
