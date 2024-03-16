@@ -22,10 +22,11 @@ class Items extends Db
         return $this->select(self::$columns, $where);
     }
 
-    public function selectByIdBetween(int $start, int $end): array | null
+    public function selectByIdBetween(int $start, int $end, array $order): array | null
     {
         return $this->selectWithAllColumn([
-            'id[<>]' => [$start, $end]
+            'id[<>]' => [$start, $end],
+            'ORDER' => $order
         ]);
     }
 
