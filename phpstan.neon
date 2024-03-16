@@ -1,0 +1,8 @@
+parameters:
+	level: 5
+	paths:
+		- src
+	ignoreErrors:
+		- message: '#Variable \$container might not be defined#'
+		- message: '#Variable \$config might not be defined#'
+		- message: '#Variable \$app might not be defined#'

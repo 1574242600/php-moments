@@ -1,0 +1,4 @@
+vendor/
+src/logs/*
+cache/
+.php-cs-fixer.cache

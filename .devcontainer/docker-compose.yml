@@ -1,0 +1,24 @@
+version: "3"
+services:
+  php-fpm:
+    build: 'php-fpm'
+    expose:
+      - "8000"
+      - "3306"
+    volumes:
+      - ..:/workspaces/
+    
+  nginx:
+    build: 'nginx'
+    network_mode: service:php-fpm
+    volumes:
+      - ..:/workspaces/
+
+  mariadb:
+    image: mariadb:10.6.16
+    network_mode: service:php-fpm
+    environment:
+      MARIADB_DATABASE: dev
+      MARIADB_PASSWORD: dev
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_USER: dev

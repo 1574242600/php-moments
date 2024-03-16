@@ -1,0 +1,28 @@
+{
+    "name": "moments",
+    "service": "php-fpm",
+    "dockerComposeFile": "./docker-compose.yml",
+    "workspaceFolder": "/workspaces/",
+    "forwardPorts": [8000, 3306],
+    "portsAttributes": {
+        "8000": {
+            "label": "http",
+            "onAutoForward": "notify"
+            
+        },
+        "3306": {
+            "label": "db",
+            "onAutoForward": "notify"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "xdebug.php-pack",
+                "DEVSENSE.composer-php-vscode",
+                "bmewburn.vscode-intelephense-client",
+                "SanderRonde.phpstan-vscode"
+            ]
+        }
+    }
+}
