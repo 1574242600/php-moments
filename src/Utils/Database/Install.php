@@ -64,8 +64,7 @@ class Install
             ],
             'date' => [
                 'TIMESTAMP',
-                'NULL',
-                'DEFAULT NULL'
+                'NOT NULL'
             ],
         ]);
 
