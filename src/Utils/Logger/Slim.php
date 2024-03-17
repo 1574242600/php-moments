@@ -15,7 +15,7 @@ class Slim
             return self::$logger;
         }
 
-        $logStream = new StreamHandler($config['logs_dir']. '/slim.log', $config['dev'] ? 100 : $config['logs_level']);
+        $logStream = new StreamHandler($config['logs_dir']. '/slim.log', $config['dev'] ? 100 : $config['lo_level']);
 
         self::$logger = new Logger('slim');
         self::$logger->pushHandler($logStream);

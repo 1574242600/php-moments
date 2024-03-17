@@ -15,7 +15,7 @@ class Cron
             return self::$logger;
         }
 
-        $logStream = new StreamHandler($config['logs_dir'] . '/corn.log', $config['dev'] ? 100 : $config['logs_level']);
+        $logStream = new StreamHandler($config['logs_dir'] . '/corn.log', $config['dev'] ? 100 : $config['log_level']);
 
         self::$logger = new Logger('cron');
         self::$logger->pushHandler($logStream);
